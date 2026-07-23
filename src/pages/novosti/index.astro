@@ -1,0 +1,45 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { formatDate as fmt } from '../../lib/date';
+
+const items = (await getCollection('novosti')).sort(
+  (a, b) => b.data.date.getTime() - a.data.date.getTime()
+);
+---
+<Base
+  title={'Novosti — Ustanova za zdravstvenu skrb „AUDIO”'}
+  description={'Novosti i obavijesti Ustanove za zdravstvenu skrb AUDIO — radno vrijeme, cijepljenja, usluge i događanja.'}
+>
+  <div class="page-hero">
+    <div class="container">
+      <p class="crumb"><a href="/">Naslovnica</a> / Novosti</p>
+      <h1>Novosti</h1>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      {items.length === 0 ? (
+        <p class="lead-copy">Trenutno nema objavljenih novosti.</p>
+      ) : (
+        <div class="news-grid">
+          {items.map((item) => (
+            <article class="ncard">
+              {item.data.coverImage && (
+                <a class="nthumb" href={`/novosti/${item.id}`}>
+                  <img src={item.data.coverImage} alt={item.data.title} loading="lazy" />
+                </a>
+              )}
+              <div class="nbody">
+                <p class="ndate">{fmt(item.data.date)}</p>
+                <h3><a href={`/novosti/${item.id}`}>{item.data.title}</a></h3>
+                {item.data.summary && <p>{item.data.summary}</p>}
+              </div>
+            </article>
+          ))}
+        </div>
+      )}
+    </div>
+  </section>
+</Base>

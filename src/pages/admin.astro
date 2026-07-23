@@ -1,0 +1,18 @@
+---
+// Preusmjeravanje na Pages CMS — kolekcija Novosti.
+const cmsUrl = 'https://app.pagescms.org/roko222211/audio-website/main/collection/novosti';
+---
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <meta http-equiv="refresh" content={`0; url=${cmsUrl}`} />
+  <title>Otvaranje CMS-a</title>
+</head>
+<body>
+  <p>Otvaram uređivanje sadržaja… <a href={cmsUrl}>Klikni ovdje ako se stranica ne otvori automatski.</a></p>
+  <script is:inline define:vars={{ cmsUrl }}>window.location.replace(cmsUrl);</script>
+</body>
+</html>

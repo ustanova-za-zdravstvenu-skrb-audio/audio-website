@@ -1,0 +1,50 @@
+# PREDLOŽAK GitHub Pages deploy workflowa.
+# Da bi se aktivirao automatski deploy, premjesti ovu datoteku u:
+#   .github/workflows/deploy-pages.yml
+# (potreban je token s `workflow` scope-om: `gh auth refresh -h github.com -s workflow`,
+#  ili je dodaj izravno kroz GitHub web sučelje). Zatim postavi repo varijablu
+#  ENABLE_GITHUB_PAGES=true (i po potrebi PAGES_BASE_PATH / PAGES_SITE_URL).
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: vars.ENABLE_GITHUB_PAGES == 'true'
+    runs-on: ubuntu-latest
+    env:
+      BASE_PATH: ${{ vars.PAGES_BASE_PATH }}
+      SITE_URL: ${{ vars.PAGES_SITE_URL }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Build and upload Astro site
+        uses: withastro/action@v6
+        with:
+          node-version: 24
+
+  deploy:
+    if: vars.ENABLE_GITHUB_PAGES == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

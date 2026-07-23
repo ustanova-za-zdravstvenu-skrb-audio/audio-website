@@ -1,0 +1,11 @@
+{
+  "stavke": [
+    { "naslov": "Primarna zdravstvena zaštita", "opis": "" },
+    { "naslov": "Specijalističke usluge", "opis": "Nudimo dodatne usluge poput EKG (Elektrokardiografija), Holter tlaka, UZV dijagnostika i dermatoskopija." },
+    { "naslov": "Narudžba lijekova", "opis": "" },
+    { "naslov": "Laboratorijske pretrage", "opis": "" },
+    { "naslov": "Cijepljenje", "opis": "" },
+    { "naslov": "Bolovanje", "opis": "" },
+    { "naslov": "Ostale usluge", "opis": "" }
+  ]
+}

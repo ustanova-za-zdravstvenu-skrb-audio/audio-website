@@ -1,0 +1,120 @@
+media:
+  input: public/images
+  output: /images
+  categories: [image]
+  rename: safe
+
+content:
+  - name: novosti
+    label: Novosti
+    type: collection
+    path: src/content/novosti
+    format: yaml-frontmatter
+    filename: "{fields.title}.mdoc"
+    view:
+      fields: [title, date, summary]
+      primary: title
+      sort: [date, title]
+      search: [title, summary, body]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Naslov
+        type: string
+        required: true
+        description: Naslov novosti koji se prikazuje na stranici.
+      - name: date
+        label: Datum objave
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: summary
+        label: Kratki sažetak
+        type: text
+        description: Kratki opis koji se prikazuje na popisu novosti.
+        options:
+          maxlength: 300
+      - name: coverImage
+        label: Naslovna slika
+        type: image
+        description: Opcionalna slika koja se prikazuje uz novost.
+        options:
+          path: public/images/novosti
+          categories: [image]
+          extensions: [jpg, jpeg, png, webp, gif]
+          rename: safe
+      - name: body
+        label: Sadržaj
+        type: rich-text
+        required: true
+        options:
+          format: markdown
+          switcher: true
+          path: public/images/novosti
+          categories: [image]
+          extensions: [jpg, jpeg, png, webp, gif]
+          rename: safe
+
+  - name: obavijest
+    label: Obavijesna traka
+    type: file
+    path: src/data/obavijest.json
+    format: json
+    fields:
+      - name: aktivna
+        label: Prikaži traku
+        type: boolean
+        description: Uključi ili isključi žutu/clay traku na vrhu svih stranica.
+      - name: oznaka
+        label: Oznaka (pill)
+        type: string
+        description: Kratka oznaka lijevo, npr. „Novost”.
+      - name: tekst
+        label: Tekst obavijesti
+        type: text
+        description: Glavna poruka u traci.
+      - name: telefon
+        label: Telefon (opcionalno)
+        type: string
+        description: Ako je unesen, prikazuje se kao poziv na kraju poruke (npr. 01 2305 444).
+
+  - name: tim
+    label: Tim
+    type: file
+    path: src/data/tim.json
+    format: json
+    fields:
+      - name: clanovi
+        label: Članovi tima
+        type: object
+        list: true
+        fields:
+          - name: ime
+            label: Ime i prezime
+            type: string
+            required: true
+          - name: titula
+            label: Titula / uloga
+            type: string
+
+  - name: usluge
+    label: Usluge (naslovnica)
+    type: file
+    path: src/data/usluge.json
+    format: json
+    fields:
+      - name: stavke
+        label: Stavke usluga
+        type: object
+        list: true
+        fields:
+          - name: naslov
+            label: Naslov
+            type: string
+            required: true
+          - name: opis
+            label: Opis (opcionalno)
+            type: text

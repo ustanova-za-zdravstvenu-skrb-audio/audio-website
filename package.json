@@ -1,0 +1,20 @@
+{
+  "name": "audio-website",
+  "version": "1.0.0",
+  "description": "Astro website Ustanove za zdravstvenu skrb \"AUDIO\" s Git-based CMS uređivanjem (Pages CMS).",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && node scripts/prefix-base-path.mjs",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://audio.hr",
+  "dependencies": {
+    "@astrojs/markdoc": "^2.0.3",
+    "astro": "^7.0.7"
+  }
+}
