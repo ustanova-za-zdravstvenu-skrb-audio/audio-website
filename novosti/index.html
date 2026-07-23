@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="hr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Novosti — Ustanova za zdravstvenu skrb „AUDIO”</title><meta name="description" content="Novosti i obavijesti Ustanove za zdravstvenu skrb AUDIO — radno vrijeme, cijepljenja, usluge i događanja."><link rel="icon" href="/audio-website/images/2024/09/cropped-icon-6.png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="/audio-website/style.css"></head><body><div class="announce" id="announce" role="region" aria-label="Obavijest"><div class="container"><span class="pill">Novost</span><span>Lijek Mounjaro je dostupan u našoj ustanovi. Za informacije i narudžbu nazovite <a href="tel:+38512305444">01 2305 444</a></span><button class="close" id="announceClose" aria-label="Zatvori obavijest">&#10005;</button></div></div><header class="hd"><div class="container"><a class="brand" href="/audio-website/"><img src="/audio-website/images/2024/09/icon-6.png" alt="AUDIO logo"><span><b>Ustanova AUDIO</b><small>zdravstvena skrb · Zagreb</small></span></a><button class="burger" aria-label="Izbornik" aria-expanded="false" aria-controls="mainNav" type="button" onclick="const n=document.getElementById('mainNav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))"><span></span><span></span><span></span></button><nav class="nav" id="mainNav" aria-label="Glavna navigacija"><a href="/audio-website/#o-nama">O nama</a><a href="/audio-website/usluge">Usluge</a><a href="/audio-website/#radno_vrijeme">Ordinacije</a><a href="/audio-website/novosti">Novosti</a><a href="/audio-website/#tim">Tim</a><a class="cta" href="/audio-website/#kontakt">Naručite se</a></nav></div></header><div class="page-hero"><div class="container"><p class="crumb"><a href="/audio-website/">Naslovnica</a> / Novosti</p><h1>Novosti</h1></div></div><section><div class="container"><div class="news-grid"><article class="ncard"><a class="nthumb" href="/audio-website/novosti/dobrodosli-na-novu-web-stranicu"><img src="/audio-website/images/2024/09/medical-563427_1280-1024x682.jpg" alt="Dobrodošli na novu web stranicu" loading="lazy"></a><div class="nbody"><p class="ndate">16. 07. 2026.</p><h3><a href="/audio-website/novosti/dobrodosli-na-novu-web-stranicu">Dobrodošli na novu web stranicu</a></h3><p>Predstavljamo novu, bržu i preglednu web stranicu Ustanove AUDIO — prilagođenu mobitelima, s jasnim pregledom usluga, radnog vremena i kontakata.</p></div></article><article class="ncard"><a class="nthumb" href="/audio-website/novosti/cijepljenje-utorkom-i-petkom"><img src="/audio-website/images/2024/09/medical-equipment-4099430_1280.jpg" alt="Cijepljenje utorkom i petkom" loading="lazy"></a><div class="nbody"><p class="ndate">10. 07. 2026.</p><h3><a href="/audio-website/novosti/cijepljenje-utorkom-i-petkom">Cijepljenje utorkom i petkom</a></h3><p>Podsjećamo pacijente da se sva cijepljenja u našim ordinacijama provode utorkom i petkom od 9 do 13 sati, uz prethodnu najavu.</p></div></article></div></div></section><footer class="ft"><div class="container cols"><div><h4>Matična ustanova<br>(Božidarevićeva ulica 7, Zagreb)</h4><p><strong>E-mail:</strong> <a href="mailto:doktor@audio.hr">doktor@audio.hr</a></p><p><strong>Telefon:</strong> 01 2314 014</p><iframe loading="lazy" title="Karta — Božidarevićeva ulica 7, Zagreb" src="https://maps.google.com/maps?q=Bo%C5%BEidarevi%C4%87eva%20ulica%207%2C%2010000%20Zagreb&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe></div><div><h4>Podružnica 1<br>(Ul. Ede Murtića 6, Zagreb)</h4><p><strong>E-mail:</strong> <a href="mailto:ordinacija@audio.hr">ordinacija@audio.hr</a></p><p><strong>Telefon:</strong> 01 6636 677</p><iframe loading="lazy" title="Karta — Ede Murtića 6, Zagreb" src="https://maps.google.com/maps?q=Ede%20Murti%C4%87a%206%2C%2010000%20Zagreb&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe></div><div><h4>Službeni kontakt</h4><p><strong>Ustanova za zdravstvenu skrb AUDIO</strong></p><p><strong>OIB:</strong> 43175796624</p><p><strong>Službena adresa:</strong> Božidarevićeva ulica 7, 10000 Zagreb</p><p><strong>Za pravne upite:</strong> <a href="mailto:ravnateljstvo@audio.hr">ravnateljstvo@audio.hr</a></p></div></div><div class="container base"><span>© <span id="god"></span> Ustanova za zdravstvenu skrb „AUDIO”. Sva prava pridržana.</span><a href="/audio-website/pravila-privatnosti">Pravila privatnosti</a></div></footer><script>(function(){const dismissKey = "audio-obav-1684203824";
+
+  // Obavijesna traka — zatvaranje + pamćenje
+  (function () {
+    var a = document.getElementById('announce');
+    if (a) {
+      try { if (localStorage.getItem(dismissKey) === '1') a.remove(); } catch (e) {}
+      var btn = document.getElementById('announceClose');
+      if (btn) btn.addEventListener('click', function () {
+        a.remove();
+        try { localStorage.setItem(dismissKey, '1'); } catch (e) {}
+      });
+    }
+  })();
+
+  // Godina u footeru
+  var g = document.getElementById('god');
+  if (g) g.textContent = new Date().getFullYear();
+})();</script><script>
+  // Reveal-on-scroll (progresivno poboljšanje; bez JS-a / uz reduced-motion sve je odmah vidljivo)
+  (function () {
+    var els = [].slice.call(document.querySelectorAll('.reveal'));
+    if (!els.length) return;
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+    if (!('IntersectionObserver' in window) || reduce.matches) {
+      els.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el) { io.observe(el); });
+  })();
+
+  // Brojači
+  (function () {
+    var nums = [].slice.call(document.querySelectorAll('[data-count]'));
+    if (!nums.length) return;
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target, t = +el.dataset.count, dur = 1500, t0 = performance.now();
+        (function tick(now) {
+          var p = Math.min((now - t0) / dur, 1);
+          el.textContent = Math.round(t * (1 - Math.pow(1 - p, 3))).toLocaleString('hr-HR');
+          if (p < 1) requestAnimationFrame(tick);
+        })(t0);
+        co.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    nums.forEach(function (el) { co.observe(el); });
+  })();
+
+  // Kontakt forma -> mailto
+  (function () {
+    var form = document.getElementById('kontaktForma');
+    if (!form) return;
+    form.addEventListener('submit', function (ev) {
+      ev.preventDefault();
+      var f = new FormData(this);
+      var vrsta = f.get('vrsta') || '';
+      var to = String(vrsta).indexOf('Podružnicu') !== -1 ? 'ordinacija@audio.hr' : 'doktor@audio.hr';
+      var body = 'Ime i prezime: ' + (f.get('ime') || '') +
+        '\nE-mail: ' + (f.get('email') || '-') +
+        '\nVrsta upita: ' + vrsta +
+        '\nHZZO usluga: ' + (f.get('hzzo') || '-') +
+        '\n\n' + (f.get('poruka') || '');
+      location.href = 'mailto:' + to +
+        '?subject=' + encodeURIComponent('Upit s web stranice — ' + vrsta) +
+        '&body=' + encodeURIComponent(body);
+    });
+  })();
+
+  // Zatvori mobilni izbornik nakon klika na link ili na resize
+  (function () {
+    var nav = document.getElementById('mainNav');
+    if (!nav) return;
+    var burger = document.querySelector('.burger');
+    function close() {
+      nav.classList.remove('open');
+      if (burger) burger.setAttribute('aria-expanded', 'false');
+    }
+    nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
+    window.addEventListener('resize', function () { if (window.innerWidth > 740) close(); });
+  })();
+</script></body></html>
