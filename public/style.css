@@ -4,20 +4,22 @@
    Tipografija: Fraunces (naslovi) + Inter (tekst)
    ===================================================== */
 :root{
-  --pine:#0e3a3c;          /* duboka plavo-zelena baza */
-  --pine-deep:#092a2c;
-  --pine-soft:#155356;
-  --sea:#2e6f72;
-  --clay:#c2724f;          /* suzdržani topli akcent */
-  --clay-soft:#f3e2d8;
-  --paper:#faf7f2;         /* topli off-white */
-  --paper-2:#f2ede4;
+  /* Paleta izvedena iz logotipa (srce + puls): teal-cyan #3DC0BD -> plava #317AC7.
+     Dvotonski sustav: teal baza (struktura) + plavi akcent (pop), hladni off-white. */
+  --pine:#0e3a4a;          /* duboka teal-plava baza (tamni kraj loga) */
+  --pine-deep:#0a2c39;
+  --pine-soft:#155a6e;
+  --sea:#1c7488;           /* mid teal — linkovi, eyebrow */
+  --clay:#2f77c4;          /* akcent = logo plava (čitljiv kao tekst ~4.6:1) */
+  --clay-soft:#dcebfa;     /* svijetli plavi ton */
+  --paper:#f5f8fa;         /* hladni off-white */
+  --paper-2:#e9f1f4;
   --white:#ffffff;
-  --ink:#13282b;
-  --muted:#5a6e6f;
-  --hair:#e4ddd1;
+  --ink:#122c34;
+  --muted:#54686f;
+  --hair:#dbe6ea;
   --radius:22px;
-  --shadow:0 10px 40px rgba(14,58,60,.10);
+  --shadow:0 10px 40px rgba(14,58,74,.10);
   --ease:cubic-bezier(.22,.61,.36,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
@@ -48,13 +50,13 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
 
 /* ---------- Obavijest (announcement bar) ---------- */
-.announce{position:relative;z-index:201;background:var(--clay);color:#fff7f2;font-size:.93rem}
+.announce{position:relative;z-index:201;background:var(--clay);color:#eef4fb;font-size:.93rem}
 .announce .container{display:flex;align-items:center;justify-content:center;gap:14px;padding:11px 54px 11px 28px;text-align:center;flex-wrap:wrap}
-.announce .pill{flex:0 0 auto;background:#fff7f2;color:var(--clay);font-family:'Fraunces',serif;font-style:italic;font-size:.78rem;font-weight:600;padding:3px 13px;border-radius:999px}
+.announce .pill{flex:0 0 auto;background:#eef4fb;color:var(--clay);font-family:'Fraunces',serif;font-style:italic;font-size:.78rem;font-weight:600;padding:3px 13px;border-radius:999px}
 .announce strong{font-weight:700;color:#fff}
 .announce a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .announce a:hover{color:#fff}
-.announce .close{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(255,247,242,.18);border:0;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1rem;line-height:1;color:#fff7f2;font-weight:700;transition:.2s}
+.announce .close{position:absolute;right:16px;top:50%;transform:translateY(-50%);background:rgba(255,247,242,.18);border:0;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1rem;line-height:1;color:#eef4fb;font-weight:700;transition:.2s}
 .announce .close:hover{background:rgba(255,247,242,.35)}
 @media(max-width:740px){.announce .container{font-size:.84rem;padding:10px 50px 10px 18px}}
 
@@ -146,7 +148,7 @@ h2.t em{font-style:italic;color:var(--clay)}
 .svc-copy p{color:#bcd3d0;margin-bottom:18px}
 .svc-copy strong{color:var(--paper)}
 .svc-copy .cta{margin-top:18px;background:var(--clay);display:inline-block;text-decoration:none}
-.svc-copy .cta:hover{background:#a85d3e}
+.svc-copy .cta:hover{background:#245ea3}
 .svc-list{list-style:none}
 .svc-list li{display:grid;grid-template-columns:54px 1fr;gap:22px;padding:22px 0;border-bottom:1px solid rgba(250,247,242,.14);align-items:baseline}
 .svc-list li:first-child{padding-top:0}
