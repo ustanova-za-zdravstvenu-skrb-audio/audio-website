@@ -35,7 +35,15 @@ Konfiguracija CMS-a nalazi se u `.pages.yml`.
 
 ## Deploy
 
-Deploy workflow je priložen kao **`docs/deploy-pages.yml`** (predložak). Da bi se aktivirao automatski GitHub Pages deploy, premjesti ga u `.github/workflows/deploy-pages.yml` — to zahtijeva GitHub token s `workflow` scope-om (`gh auth refresh -h github.com -s workflow`) ili dodavanje datoteke izravno kroz GitHub web sučelje. Workflow gradi i objavljuje svaki commit na `main`, a aktivira se repozitorijskom varijablom `ENABLE_GITHUB_PAGES=true`.
+Workflow `.github/workflows/deploy-pages.yml` gradi i objavljuje svaki commit na `main` (Pages source = GitHub Actions). Aktivira se repozitorijskom varijablom `ENABLE_GITHUB_PAGES=true`, a subpath/domenu određuju `PAGES_BASE_PATH` i `PAGES_SITE_URL`.
+
+Trenutne vrijednosti (staging na GitHub Pages project URL-u):
+
+- `ENABLE_GITHUB_PAGES=true`
+- `PAGES_BASE_PATH=audio-website`
+- `PAGES_SITE_URL=https://roko222211.github.io`
+
+Za prelazak na `audio.hr`: postavi custom domenu u Settings → Pages, `PAGES_BASE_PATH=` (prazno) i `PAGES_SITE_URL=https://audio.hr`, pa pokreni deploy.
 
 Za prelazak na pravu domenu:
 
