@@ -22,6 +22,11 @@ jobs:
       BASE_PATH: ${{ vars.PAGES_BASE_PATH }}
       SITE_URL: ${{ vars.PAGES_SITE_URL }}
     steps:
+      - name: Enable and configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
       - name: Checkout repository
         uses: actions/checkout@v7
 
