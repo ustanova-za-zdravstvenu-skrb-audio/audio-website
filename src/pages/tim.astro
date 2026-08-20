@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import tim from '../data/tim.json';
+
+const clanovi = tim.clanovi ?? [];
+
+const inicijali = (ime: string): string =>
+  (ime || '')
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => Array.from(w)[0] || '')
+    .join('')
+    .toUpperCase();
+---
+<Base
+  title={'Tim — Ustanova za zdravstvenu skrb AUDIO'}
+  description={'Naš tim čine visokokvalificirani liječnici i medicinske sestre Ustanove za zdravstvenu skrb AUDIO koji se svakodnevno brinu o vašem zdravlju.'}
+>
+
+<div class="page-hero">
+  <div class="container">
+    <p class="crumb"><a href="/">Naslovnica</a> / Tim</p>
+    <h1>Naš tim</h1>
+  </div>
+</div>
+
+<section aria-labelledby="tim-h">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow reveal">Tko smo mi</p>
+        <h2 class="t reveal" id="tim-h">Naš tim <em>stručnjaka</em></h2>
+      </div>
+      <p class="right reveal d1">Naš tim čine visokokvalificirani liječnici i medicinske sestre koji se svakodnevno brinu o vašem zdravlju:</p>
+    </div>
+    <div class="team-grid reveal">
+      {clanovi.map((c: { ime: string; titula?: string; slika?: string }) => (
+        <div class="tm">
+          {c.slika
+            ? <img class="av" src={c.slika} alt={c.ime} width="56" height="56" loading="lazy" />
+            : <span class="av">{inicijali(c.ime)}</span>}
+          <div>
+            <h3>{c.ime}</h3>
+            {c.titula && <p>{c.titula}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+</Base>
