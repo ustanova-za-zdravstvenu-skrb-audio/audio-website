@@ -12,7 +12,7 @@ const { item } = Astro.props;
 const { Content } = await render(item);
 ---
 <Base title={`${item.data.title} — Ustanova za zdravstvenu skrb AUDIO`} description={item.data.summary}>
-  <div class="page-hero">
+  <div class="page-hero ph-novosti">
     <div class="container">
       <p class="crumb"><a href="/">Naslovnica</a> / <a href="/novosti">Novosti</a></p>
       <h1>{item.data.title}</h1>
