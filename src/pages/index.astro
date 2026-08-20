@@ -238,9 +238,11 @@ const latest = (await getCollection('novosti'))
       <p class="right reveal d1">Naš tim čine visokokvalificirani liječnici i medicinske sestre koji se svakodnevno brinu o vašem zdravlju:</p>
     </div>
     <div class="team-grid reveal">
-      {clanovi.map((c: { ime: string; titula?: string }) => (
+      {clanovi.map((c: { ime: string; titula?: string; slika?: string }) => (
         <div class="tm">
-          <span class="av">{inicijali(c.ime)}</span>
+          {c.slika
+            ? <img class="av" src={c.slika} alt={c.ime} width="56" height="56" loading="lazy" />
+            : <span class="av">{inicijali(c.ime)}</span>}
           <div>
             <h3>{c.ime}</h3>
             {c.titula && <p>{c.titula}</p>}
@@ -320,6 +322,7 @@ const latest = (await getCollection('novosti'))
         </div>
       </div>
       <form class="form reveal d1" id="kontaktForma">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <label for="ime">Ime i prezime</label>
         <input type="text" id="ime" name="ime" placeholder="Ime i prezime" required autocomplete="name" />
         <label for="email">E-mail adresa</label>
@@ -339,7 +342,8 @@ const latest = (await getCollection('novosti'))
         <label for="poruka">Vaša poruka</label>
         <textarea id="poruka" name="poruka" required></textarea>
         <button type="submit">Pošalji</button>
-        <p class="note">Slanjem se otvara vaš e-mail program s pripremljenom porukom.</p>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="note">Poruku šaljemo izravno u našu ordinaciju. Odgovaramo u najkraćem mogućem roku.</p>
       </form>
     </div>
   </div>

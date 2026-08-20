@@ -197,6 +197,11 @@ h2.t em{font-style:italic;color:var(--clay)}
 .tm .av{flex:0 0 56px;width:56px;height:56px;border-radius:50%;background:var(--pine);color:var(--clay-soft);display:grid;place-items:center;font-family:'Fraunces',serif;font-size:1.15rem}
 .tm h3{font-size:1.06rem;color:var(--pine);font-weight:600}
 .tm p{font-size:.82rem;color:var(--muted)}
+.tm img.av{object-fit:cover;background:none;padding:0}
+.hp{display:none}
+.form-status{margin-top:12px;font-size:.9rem;line-height:1.5}
+.form-status.ok{color:#1f7a3d}
+.form-status.err{color:#b3261e}
 
 /* ---------- Stats band ---------- */
 .stats{padding:0}

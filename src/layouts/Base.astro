@@ -161,23 +161,37 @@ const dismissKey = (() => {
     nums.forEach(function (el) { co.observe(el); });
   })();
 
-  // Kontakt forma -> mailto
+  // Kontakt forma -> FormSubmit (AJAX)
   (function () {
     var form = document.getElementById('kontaktForma');
     if (!form) return;
+    var ENDPOINT = 'https://formsubmit.co/ajax/rokogrguric@gmail.com'; // TEST inbox; prije launcha -> ordinacija@audio.hr
+    var statusEl = document.getElementById('formStatus');
+    var btn = form.querySelector('button[type="submit"]');
+    function setStatus(msg, cls) { if (statusEl) { statusEl.textContent = msg; statusEl.className = 'form-status' + (cls ? ' ' + cls : ''); } }
     form.addEventListener('submit', function (ev) {
       ev.preventDefault();
-      var f = new FormData(this);
+      var hp = form.querySelector('[name="_honey"]');
+      if (hp && hp.value) return;
+      var f = new FormData(form);
       var vrsta = f.get('vrsta') || '';
-      var to = String(vrsta).indexOf('Podružnicu') !== -1 ? 'ordinacija@audio.hr' : 'doktor@audio.hr';
-      var body = 'Ime i prezime: ' + (f.get('ime') || '') +
-        '\nE-mail: ' + (f.get('email') || '-') +
-        '\nVrsta upita: ' + vrsta +
-        '\nHZZO usluga: ' + (f.get('hzzo') || '-') +
-        '\n\n' + (f.get('poruka') || '');
-      location.href = 'mailto:' + to +
-        '?subject=' + encodeURIComponent('Upit s web stranice — ' + vrsta) +
-        '&body=' + encodeURIComponent(body);
+      f.append('_subject', 'Upit s web stranice — ' + vrsta);
+      f.append('_template', 'table');
+      f.set('_captcha', 'false');
+      if (btn) { btn.disabled = true; btn.textContent = 'Šaljem…'; }
+      setStatus('', '');
+      fetch(ENDPOINT, { method: 'POST', body: f, headers: { 'Accept': 'application/json' } })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data && (data.success === 'true' || data.success === true)) {
+            form.reset();
+            setStatus('Hvala! Vaša poruka je poslana — javit ćemo se u najkraćem roku.', 'ok');
+          } else { throw new Error('fail'); }
+        })
+        .catch(function () {
+          setStatus('Slanje trenutačno nije uspjelo. Nazovite nas ili pokušajte ponovno.', 'err');
+        })
+        .finally(function () { if (btn) { btn.disabled = false; btn.textContent = 'Pošalji'; } });
     });
   })();
 

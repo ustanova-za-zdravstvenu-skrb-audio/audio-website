@@ -99,6 +99,14 @@ content:
           - name: titula
             label: Titula / uloga
             type: string
+          - name: slika
+            label: Fotografija (opcionalno)
+            type: image
+            options:
+              path: public/images/tim
+              categories: [image]
+              extensions: [jpg, jpeg, png, webp]
+              rename: safe
 
   - name: usluge
     label: Usluge (naslovnica)
