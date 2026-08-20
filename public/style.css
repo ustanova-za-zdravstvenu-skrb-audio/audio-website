@@ -202,6 +202,10 @@ h2.t em{font-style:italic;color:var(--clay)}
 .form-status{margin-top:12px;font-size:.9rem;line-height:1.5}
 .form-status.ok{color:#1f7a3d}
 .form-status.err{color:#b3261e}
+.tsr{padding:60px 0;border-top:1px solid var(--hair)}
+.tsr .container{display:grid;grid-template-columns:1.1fr 1fr;gap:44px;align-items:center}
+.tsr .tsr-txt p{color:var(--muted);margin:0 0 22px;max-width:48ch}
+@media (max-width:760px){.tsr .container{grid-template-columns:1fr;gap:18px}.tsr{padding:44px 0}}
 
 /* ---------- Stats band ---------- */
 .stats{padding:0}
