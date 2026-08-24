@@ -184,6 +184,7 @@ const faq = [
         </div>
       </div>
       <form class="form reveal d1" id="kontaktForma">
+        <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <label for="ime">Ime i prezime</label>
         <input type="text" id="ime" name="ime" placeholder="Ime i prezime" required autocomplete="name" />
         <label for="email">E-mail adresa</label>
@@ -195,10 +196,16 @@ const faq = [
           <option>Upit za Podružnicu 1 (Ede Murtića 6, Zagreb)</option>
           <option>Generalni upit</option>
         </select>
+        <label id="hzzo-lbl">HZZO usluga</label>
+        <div class="radio-row" role="radiogroup" aria-labelledby="hzzo-lbl">
+          <label><input type="radio" name="hzzo" value="Da" /> Da</label>
+          <label><input type="radio" name="hzzo" value="Ne" /> Ne</label>
+        </div>
         <label for="poruka">Vaša poruka</label>
         <textarea id="poruka" name="poruka" required></textarea>
         <button type="submit">Pošalji</button>
-        <p class="note">Slanjem se otvara vaš e-mail program s pripremljenom porukom.</p>
+        <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="note">Poruku šaljemo izravno u našu ordinaciju. Odgovaramo u najkraćem mogućem roku.</p>
       </form>
     </div>
   </div>
