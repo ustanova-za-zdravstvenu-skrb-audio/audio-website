@@ -126,3 +126,101 @@ content:
           - name: opis
             label: Opis (opcionalno)
             type: text
+
+  - name: kontakt
+    label: Kontakt i ordinacije
+    type: file
+    path: src/data/kontakt.json
+    format: json
+    fields:
+      - name: punNaziv
+        label: Puni naziv ustanove
+        type: string
+      - name: oib
+        label: OIB
+        type: string
+      - name: privatneUslugeTelefon
+        label: Telefon za privatne usluge
+        type: string
+      - name: pravniEmail
+        label: E-mail za pravne upite / zaštitu podataka
+        type: string
+      - name: lokacije
+        label: Ordinacije / lokacije
+        type: object
+        list: true
+        fields:
+          - name: oznaka
+            label: Naziv lokacije
+            type: string
+            required: true
+          - name: adresa
+            label: Adresa (prikaz)
+            type: string
+            required: true
+          - name: adresaPuna
+            label: Puna adresa (za službeni kontakt)
+            type: string
+          - name: karta
+            label: Karta
+            type: select
+            description: mat = karta Matične ustanove, pod = karta Podružnice.
+            options:
+              values: [mat, pod]
+          - name: telefon
+            label: Telefon
+            type: string
+          - name: email
+            label: E-mail
+            type: string
+          - name: radnoVrijeme
+            label: Radno vrijeme
+            type: object
+            list: true
+            fields:
+              - name: dani
+                label: Dani
+                type: string
+              - name: vrijeme
+                label: Vrijeme
+                type: string
+              - name: napomena
+                label: Napomena (opcionalno)
+                type: string
+
+  - name: usluge_hzzo
+    label: HZZO usluge i FAQ
+    type: file
+    path: src/data/usluge-hzzo.json
+    format: json
+    fields:
+      - name: usluge
+        label: HZZO usluge (akordeon)
+        type: object
+        list: true
+        fields:
+          - name: naslov
+            label: Naslov usluge
+            type: string
+            required: true
+          - name: ikona
+            label: Ikona
+            type: select
+            options:
+              values: [pregledi, konzultacije, recepti, laboratorij, cijepljenja, bolovanja, upis, pomagala, prijevoz]
+          - name: sadrzaj
+            label: Opis
+            type: text
+            description: "Odlomci se odvajaju praznim redom. Link: [tekst](https://…). Podebljano: **tekst**."
+      - name: faq
+        label: Česta pitanja (FAQ)
+        type: object
+        list: true
+        fields:
+          - name: pitanje
+            label: Pitanje
+            type: string
+            required: true
+          - name: odgovor
+            label: Odgovor
+            type: text

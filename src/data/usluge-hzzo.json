@@ -1,0 +1,83 @@
+{
+  "usluge": [
+    {
+      "ikona": "pregledi",
+      "naslov": "Pregledi",
+      "sadrzaj": "Termin vašeg pregleda možete dogovoriti pozivom ordinaciji ili putem elektroničke pošte.\n\nPremda nastojimo, nismo uvijek u mogućnosti osigurati istog liječnika na pregledu pa vas molimo za razumijevanje. Za sve preglede uključivo i žurne preglede u istom danu potrebno se prethodno naručiti pa molimo da ne dolazite u ordinaciju na pregled ukoliko se niste prethodno naručili.\n\nNismo uvijek u mogućnosti sve vaše probleme riješiti u jednom posjetu/konzultaciji. Poštujte svoje vrijeme i vrijeme našeg medicinskog tima."
+    },
+    {
+      "ikona": "konzultacije",
+      "naslov": "Telefonske konzultacije / konzultacije putem elektroničke pošte",
+      "sadrzaj": "Telefonske konzultacije u ordinaciji možete dogovoriti pozivom ordinaciji ili putem elektronske pošte.\n\nPregledi i konzultacije su vremenski ograničeni te molimo da se pridržavate tih ograničenja."
+    },
+    {
+      "ikona": "recepti",
+      "naslov": "Recepti / uputnice",
+      "sadrzaj": "Recepte i uputnice možete zatražiti telefonski, e-mailom ili putem portala e-zdravlje. Ukoliko su u pitanju novi lijekovi koji nisu dio vaše stalne terapije, molimo da za iste priložite medicinsku dokumentaciju.\n\nUkoliko nam budu potrebna dodatna objašnjenja ili dokumentacija, naše osoblje će vas kontaktirati.\n\nKorisničko ime i lozinku za pristup portalu e-zdravlje zatražite od vaše ordinacije."
+    },
+    {
+      "ikona": "laboratorij",
+      "naslov": "Laboratorijski nalazi",
+      "sadrzaj": "Za laboratorijsku dijagnostiku postoje dvije vrste uputnica, uputnica za bolnički laboratorij te uputnica za primarni laboratorij. Primarni laboratorij ovisi o lokaciji Vašeg izabranog liječnika.\n\nZa pacijente naših liječnika u Božidarevićevoj primarni laboratorij je u Domu zdravlja Švarcova, na adresi Ulica Lavoslava Švarca 20 ([link](https://dzz-istok.hr/dijagnostika/medicinsko-biokemijski-laboratorij/)), a za pacijente naših liječnika u Ulici Ede Murtića primarni laboratorij je u Domu Zdravlja Siget, na adresi Avenija Većeslava Holjevca 22 ([link](https://dzz-centar.hr/primarna-zdravstvena-zastita/laboratorij/)).\n\nVađenje krvi u oba primarna laboratorija provodi se od 7:00 do 9:00 sati, osim za hitne pretrage koje se zaprimaju do kraja radnog vremena.\n\nUkoliko laboratorijski nalaz iz primarnog laboratorija želite dobiti na vašu e-mail adresu, molimo da u laboratoriju ispunite odgovarajući obrazac koji se najčešće nalazi u čekaonici."
+    },
+    {
+      "ikona": "cijepljenja",
+      "naslov": "Cijepljenja",
+      "sadrzaj": "Ordinacije vrše cijepljenja po uputama i u zadanim vremenskim okvirima [Hrvatskog zavoda za javno zdravstvo](https://www.hzjz.hr/)."
+    },
+    {
+      "ikona": "bolovanja",
+      "naslov": "Bolovanja",
+      "sadrzaj": "Potvrde o otvaranju bolovanja i doznake kroz sustav e-zdravstvo, e-mailom ili osobno.\n\nZa otvaranje bolovanja nužno je kontaktirati ordinaciju unutar 72 sata od oboljenja."
+    },
+    {
+      "ikona": "upis",
+      "naslov": "Upis pacijenata",
+      "sadrzaj": "S obzirom da je ukupan broj pacijenata koje ordinacija može imati limitiran, premda želimo, nismo uvijek u mogućnosti upisati sve pacijente koji to traže. Molimo za razumijevanje s obzirom na postojeću listu čekanja za upis."
+    },
+    {
+      "ikona": "pomagala",
+      "naslov": "Pomagala",
+      "sadrzaj": "Za propisivanje ortopedskih pomagala te obloga za rane najčešće je potrebna preporuka bolničkog specijalista te se može propisivati samo određena količina pomagala.\n\nUkoliko Vam je potrebna doznaka za ijedno od navedenoga, molimo da nas kontaktirate kako bismo Vam objasnili daljnje potrebne korake te pružili detaljne informacije o propisivanju, korištenju i nabavi istih."
+    },
+    {
+      "ikona": "prijevoz",
+      "naslov": "Sanitetski prijevoz i ostalo",
+      "sadrzaj": "Ukoliko trebate nalog za sanitetski prijevoz, molimo da nas kontaktirate e-mailom ili telefonski.\n\nZa dobivanje istoga potrebno je pripremiti informacije o adresi polazišta, odredišta te datum i razlog putovanja. Sanitetski prijevoz naručujete, odnosno dogovarate sami telefonskim pozivom na broj [01 6302 944](tel:+38516302944).\n\nLink sanitetskog prijevoza je [ovdje](https://www.hitnazg.hr/ustroj/sanitetski-prijevoz/27)."
+    }
+  ],
+  "faq": [
+    {
+      "pitanje": "Koliko vrijede uputnice?",
+      "odgovor": "Uputnice vrijede 3 mjeseca za narudžbu, ukoliko imate termin ista vrijedi 6 mjeseci, iznimno uputnica za laboratorij u DZ Švarcova vrijedi mjesec dana."
+    },
+    {
+      "pitanje": "Kada vršite cijepljenje?",
+      "odgovor": "Sva cijepljenja provodimo utorkom i petkom od 09–13 sati."
+    },
+    {
+      "pitanje": "Da li se za pregled potrebno prethodno naručiti?",
+      "odgovor": "Da, za svaki pregled je potrebno prethodno nazvati/poslati e-mail te zatražiti termin."
+    },
+    {
+      "pitanje": "Koja je cijena privatnog pregleda doktora obiteljske medicine?",
+      "odgovor": "Cijena pregleda iznosi 40 eura."
+    },
+    {
+      "pitanje": "Kada se odvijaju telefonske konzultacije s doktoricom?",
+      "odgovor": "Ukoliko vam je potreban razgovor sa doktoricom, molimo vas da nas nazovete te ostavite ime, prezime i kontakt podatke te ćemo vas kontaktirati u najkraćem mogućem roku."
+    },
+    {
+      "pitanje": "Mogu li sam sebi naručivati lijekove putem Portal zdravlje?",
+      "odgovor": "Možete, samo je potrebno prijaviti se na Portal zdravlje sa svojim korisničkim imenom i lozinkom (ukoliko ju nemate možete ju zatražiti od nas)."
+    },
+    {
+      "pitanje": "Kada radi laboratorij za krv?",
+      "odgovor": "Laboratorij u DZ Švarcova vadi krv u jutarnjim terminima od 07–09 sati."
+    },
+    {
+      "pitanje": "Kada mogu podići tražene lijekove?",
+      "odgovor": "Lijekove možete podići u ljekarni isti dan, iznimno dan kasnije."
+    }
+  ]
+}

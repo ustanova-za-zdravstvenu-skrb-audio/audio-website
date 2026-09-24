@@ -1,0 +1,32 @@
+{
+  "punNaziv": "Ustanova za zdravstvenu skrb AUDIO",
+  "oib": "43175796624",
+  "privatneUslugeTelefon": "01 2305 444",
+  "pravniEmail": "ravnateljstvo@audio.hr",
+  "lokacije": [
+    {
+      "oznaka": "Matična ustanova",
+      "adresa": "Božidarevićeva ulica 7, Zagreb",
+      "adresaPuna": "Božidarevićeva ulica 7, 10000 Zagreb",
+      "karta": "mat",
+      "telefon": "01 2314 014",
+      "email": "doktor@audio.hr",
+      "radnoVrijeme": [
+        { "dani": "Ponedjeljak", "vrijeme": "13:00 – 20:00", "napomena": "Prijem pacijenata 14:00 – 20:00" },
+        { "dani": "Utorak – petak", "vrijeme": "8:00 – 15:00", "napomena": "Prijem pacijenata 8:00 – 14:00" }
+      ]
+    },
+    {
+      "oznaka": "Podružnica 1",
+      "adresa": "Ede Murtića 6, Zagreb",
+      "adresaPuna": "Ul. Ede Murtića 6, Zagreb",
+      "karta": "pod",
+      "telefon": "01 6636 677",
+      "email": "ordinacija@audio.hr",
+      "radnoVrijeme": [
+        { "dani": "Ponedjeljak, srijeda, petak", "vrijeme": "Prijepodne: 7:30 – 14:00", "napomena": "" },
+        { "dani": "Utorak, četvrtak", "vrijeme": "Popodne: 13:30 – 20:00", "napomena": "" }
+      ]
+    }
+  ]
+}
