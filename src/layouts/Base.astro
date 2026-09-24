@@ -83,30 +83,40 @@ const dismissKey = (() => {
 <slot />
 
 <footer class="ft">
-  <div class="container cols">
-    <div>
-      <h4>Matična ustanova<br />(Božidarevićeva ulica 7, Zagreb)</h4>
-      <p><strong>E-mail:</strong> <a href="mailto:doktor@audio.hr">doktor@audio.hr</a></p>
-      <p><strong>Telefon:</strong> 01 2314 014</p>
+  <div class="container ft-top">
+    <div class="ft-brand">
+      <a class="ft-logo" href="/">
+        <img src="/images/2024/09/icon-6.png" alt="" width="42" height="42" />
+        <span><b>Ustanova za zdravstvenu skrb AUDIO</b><small>Zagreb</small></span>
+      </a>
+      <p class="ft-tag">Specijalističke ordinacije obiteljske i dentalne medicine — HZZO ugovorna ustanova, uz privatne dodatne dijagnostičke i specijalističke usluge.</p>
+      <nav class="ft-links" aria-label="Podnožje">
+        <a href="/usluge">Usluge</a>
+        <a href="/ordinacije">Ordinacije</a>
+        <a href="/novosti">Novosti</a>
+        <a href="/tim">Tim</a>
+        <a href="/o-nama">O nama</a>
+      </nav>
+    </div>
+    <div class="ft-loc">
+      <h4>Matična ustanova</h4>
+      <p class="ft-addr">Božidarevićeva ulica 7, Zagreb</p>
+      <p class="ft-line"><a href="tel:+38512314014">01 2314 014</a> · <a href="mailto:doktor@audio.hr">doktor@audio.hr</a></p>
       <iframe loading="lazy" title="Karta — Božidarevićeva ulica 7, Zagreb" src="https://maps.google.com/maps?q=Bo%C5%BEidarevi%C4%87eva%20ulica%207%2C%2010000%20Zagreb&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
     </div>
-    <div>
-      <h4>Podružnica 1<br />(Ul. Ede Murtića 6, Zagreb)</h4>
-      <p><strong>E-mail:</strong> <a href="mailto:ordinacija@audio.hr">ordinacija@audio.hr</a></p>
-      <p><strong>Telefon:</strong> 01 6636 677</p>
+    <div class="ft-loc">
+      <h4>Podružnica 1</h4>
+      <p class="ft-addr">Ul. Ede Murtića 6, Zagreb</p>
+      <p class="ft-line"><a href="tel:+38516636677">01 6636 677</a> · <a href="mailto:ordinacija@audio.hr">ordinacija@audio.hr</a></p>
       <iframe loading="lazy" title="Karta — Ede Murtića 6, Zagreb" src="https://maps.google.com/maps?q=Ede%20Murti%C4%87a%206%2C%2010000%20Zagreb&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
     </div>
-    <div>
-      <h4>Službeni kontakt</h4>
-      <p><strong>Ustanova za zdravstvenu skrb AUDIO</strong></p>
-      <p><strong>OIB:</strong> 43175796624</p>
-      <p><strong>Službena adresa:</strong> Božidarevićeva ulica 7, 10000 Zagreb</p>
-      <p><strong>Za pravne upite:</strong> <a href="mailto:ravnateljstvo@audio.hr">ravnateljstvo@audio.hr</a></p>
-    </div>
   </div>
-  <div class="container base">
-    <span>© <span id="god"></span> Ustanova za zdravstvenu skrb AUDIO. Sva prava pridržana.</span>
-    <a href="/pravila-privatnosti">Pravila privatnosti</a>
+  <div class="container ft-base">
+    <span>© <span id="god"></span> Ustanova za zdravstvenu skrb AUDIO · OIB 43175796624</span>
+    <span class="ft-base-links">
+      <a href="mailto:ravnateljstvo@audio.hr">Pravni upiti</a>
+      <a href="/pravila-privatnosti">Pravila privatnosti</a>
+    </span>
   </div>
 </footer>
 
