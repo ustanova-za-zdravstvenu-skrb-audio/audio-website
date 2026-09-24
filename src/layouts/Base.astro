@@ -184,7 +184,7 @@ const dismissKey = (() => {
   (function () {
     var form = document.getElementById('kontaktForma');
     if (!form) return;
-    var ENDPOINT = 'https://formsubmit.co/ajax/rokogrguric@gmail.com'; // TEST inbox; prije launcha -> ordinacija@audio.hr
+    var ENDPOINT = 'https://formsubmit.co/ajax/ordinacija@audio.hr'; // produkcija — ordinacija prima upite
     var statusEl = document.getElementById('formStatus');
     var btn = form.querySelector('button[type="submit"]');
     function setStatus(msg, cls) { if (statusEl) { statusEl.textContent = msg; statusEl.className = 'form-status' + (cls ? ' ' + cls : ''); } }
