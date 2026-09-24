@@ -36,6 +36,13 @@ h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spac
 img{max-width:100%;display:block}
 a{color:var(--sea)}
 a:hover{color:var(--pine)}
+/* Prijelaz između stranica (cross-document View Transitions) — Chrome + Safari, graciozan pad u starijima */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:vtOut .26s var(--ease) both}
+::view-transition-new(root){animation:vtIn .36s var(--ease) both}
+@keyframes vtOut{to{opacity:0;transform:translateY(-8px)}}
+@keyframes vtIn{from{opacity:0;transform:translateY(12px)}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}}
 .container{max-width:1180px;margin:0 auto;padding:0 28px}
 
 ::selection{background:var(--clay-soft);color:var(--pine)}
