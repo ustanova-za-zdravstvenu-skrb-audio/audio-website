@@ -35,7 +35,7 @@ const inicijali = (ime: string): string =>
       <p class="right reveal d1">Naš tim čine visokokvalificirani liječnici i medicinske sestre koji se svakodnevno brinu o vašem zdravlju:</p>
     </div>
     <div class="team-grid reveal">
-      {clanovi.map((c: { ime: string; titula?: string; slika?: string }) => (
+      {clanovi.map((c: { ime: string; titula?: string; slika?: string; oznaka?: string }) => (
         <div class="tm">
           {c.slika
             ? <img class="av" src={c.slika} alt={c.ime} width="56" height="56" loading="lazy" />
@@ -43,6 +43,7 @@ const inicijali = (ime: string): string =>
           <div>
             <h3>{c.ime}</h3>
             {c.titula && <p>{c.titula}</p>}
+            {c.oznaka && <p class="tm-tag">{c.oznaka}</p>}
           </div>
         </div>
       ))}

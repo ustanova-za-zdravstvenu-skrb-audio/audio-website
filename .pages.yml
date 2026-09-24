@@ -99,6 +99,9 @@ content:
           - name: titula
             label: Titula / uloga
             type: string
+          - name: oznaka
+            label: Dodatna oznaka (npr. sudski vještak)
+            type: string
           - name: slika
             label: Fotografija (opcionalno)
             type: image

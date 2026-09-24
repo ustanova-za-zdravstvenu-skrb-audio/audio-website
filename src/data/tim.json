@@ -1,7 +1,7 @@
 {
   "clanovi": [
-    { "ime": "Drago Paušek", "titula": "mr.sc.dr.med., spec.obit.med." },
-    { "ime": "Đurđica Paušek", "titula": "dr.med.dent." },
+    { "ime": "Drago Paušek", "titula": "mr.sc.dr.med., spec.obit.med.", "oznaka": "sudski vještak" },
+    { "ime": "Đurđica Paušek", "titula": "dr.med.dent.", "oznaka": "sudski vještak" },
     { "ime": "Višnja Cesarić", "titula": "dr.med., spec.obit.med." },
     { "ime": "Anda Tomaš", "titula": "dr.med., specijalizantica obit.med." },
     { "ime": "Gordana Mrazovac Oštrić", "titula": "dr.med., spec.obit.med." },
