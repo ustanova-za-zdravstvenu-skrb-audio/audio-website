@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import StreetMap from '../components/StreetMap.astro';
 ---
 <Base
   title={'Ordinacije — Ustanova za zdravstvenu skrb AUDIO'}
@@ -24,26 +25,30 @@ import Base from '../layouts/Base.astro';
     </div>
     <div class="loc-grid">
       <article class="loc reveal">
-        <span class="label">Matična ustanova</span>
-        <h3>Božidarevićeva ulica 7, Zagreb</h3>
-        <h4>Radno vrijeme</h4>
-        <table class="hours">
-          <tr><td>Ponedjeljak</td><td>13:00 – 20:00 (Prijem pacijenata 14:00 – 20:00)</td></tr>
-          <tr><td>Utorak – petak</td><td>8:00 – 15:00 (Prijem pacijenata 8:00 – 14:00)</td></tr>
-        </table>
-        <h4>Kontakt</h4>
-        <p class="contact">Telefon: <a href="tel:+38512314014">01 2314 014</a><br />E-mail: <a href="mailto:doktor@audio.hr">doktor@audio.hr</a></p>
+        <StreetMap which="mat" />
+        <div class="loc-body">
+          <span class="label">Matična ustanova</span>
+          <h3>Božidarevićeva ulica 7, Zagreb</h3>
+          <h4>Radno vrijeme</h4>
+          <table class="hours">
+            <tr><td>Ponedjeljak</td><td>13:00 – 20:00<span class="note">Prijem pacijenata 14:00 – 20:00</span></td></tr>
+            <tr><td>Utorak – petak</td><td>8:00 – 15:00<span class="note">Prijem pacijenata 8:00 – 14:00</span></td></tr>
+          </table>
+          <p class="contact"><span>Telefon: <a href="tel:+38512314014">01 2314 014</a></span><span>E-mail: <a href="mailto:doktor@audio.hr">doktor@audio.hr</a></span></p>
+        </div>
       </article>
       <article class="loc reveal d1">
-        <span class="label">Podružnica 1</span>
-        <h3>Ede Murtića 6, Zagreb</h3>
-        <h4>Radno vrijeme</h4>
-        <table class="hours">
-          <tr><td>Ponedjeljak, srijeda, petak</td><td>Prijepodne: 7:30 – 14:00</td></tr>
-          <tr><td>Utorak, četvrtak</td><td>Popodne: 13:30 – 20:00</td></tr>
-        </table>
-        <h4>Kontakt</h4>
-        <p class="contact">Telefon: <a href="tel:+38516636677">01 6636 677</a><br />E-mail: <a href="mailto:ordinacija@audio.hr">ordinacija@audio.hr</a></p>
+        <StreetMap which="pod" />
+        <div class="loc-body">
+          <span class="label">Podružnica 1</span>
+          <h3>Ede Murtića 6, Zagreb</h3>
+          <h4>Radno vrijeme</h4>
+          <table class="hours">
+            <tr><td>Ponedjeljak, srijeda, petak</td><td>Prijepodne: 7:30 – 14:00</td></tr>
+            <tr><td>Utorak, četvrtak</td><td>Popodne: 13:30 – 20:00</td></tr>
+          </table>
+          <p class="contact"><span>Telefon: <a href="tel:+38516636677">01 6636 677</a></span><span>E-mail: <a href="mailto:ordinacija@audio.hr">ordinacija@audio.hr</a></span></p>
+        </div>
       </article>
     </div>
   </div>

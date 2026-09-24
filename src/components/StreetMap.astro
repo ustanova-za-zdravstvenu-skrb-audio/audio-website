@@ -1,0 +1,22 @@
+---
+import matSvg from './street-mat.svg?raw';
+import podSvg from './street-pod.svg?raw';
+
+interface Props { which: 'mat' | 'pod'; }
+const { which } = Astro.props;
+
+const data = {
+  mat: {
+    svg: matSvg,
+    href: 'https://www.google.com/maps/search/?api=1&query=Bo%C5%BEidarevi%C4%87eva%20ulica%207%2C%20Zagreb',
+    label: 'Božidarevićeva 7 na Google kartama',
+  },
+  pod: {
+    svg: podSvg,
+    href: 'https://www.google.com/maps/search/?api=1&query=Ede%20Murti%C4%87a%206%2C%20Zagreb',
+    label: 'Ede Murtića 6 na Google kartama',
+  },
+};
+const m = data[which];
+---
+<a class="ft-map" href={m.href} target="_blank" rel="noopener" aria-label={m.label}><Fragment set:html={m.svg} /><span class="ft-map-cta">Prikaži na karti →</span></a>

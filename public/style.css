@@ -133,18 +133,22 @@ h2.t em{font-style:italic;color:var(--clay)}
 .badge-card a{display:inline-block;margin-top:24px;color:var(--paper);font-weight:600}
 
 /* ---------- Lokacije ---------- */
-.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.loc{background:var(--white);border:1px solid var(--hair);border-radius:var(--radius);padding:44px 40px;transition:.3s var(--ease);position:relative;overflow:hidden}
-.loc:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
-.loc::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,var(--clay),var(--sea))}
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch}
+.loc{background:var(--white);border:1px solid var(--hair);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform .3s var(--ease),box-shadow .3s var(--ease),border-color .3s var(--ease)}
+.loc:hover{box-shadow:var(--shadow);transform:translateY(-5px);border-color:transparent}
+.loc>.ft-map{margin:0;border:0;border-bottom:1px solid var(--hair);border-radius:0}
+.loc>.ft-map svg{height:152px}
+.loc-body{display:flex;flex-direction:column;flex:1;padding:32px 36px 34px}
 .loc .label{font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--clay)}
-.loc h3{font-size:1.55rem;color:var(--pine);margin:10px 0 4px}
-.loc .addr{color:var(--muted);margin-bottom:26px}
-.loc h4{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sea);margin:24px 0 10px;font-family:'Inter',sans-serif;font-weight:700}
+.loc h3{font-size:1.5rem;color:var(--pine);margin:8px 0 0;font-family:'Fraunces',serif;font-weight:600}
+.loc h4{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--sea);margin:26px 0 8px;font-family:'Inter',sans-serif;font-weight:700}
 .hours{width:100%;border-collapse:collapse}
-.hours td{padding:9px 0;border-bottom:1px dashed var(--hair);font-size:.95rem;vertical-align:top}
-.hours td:first-child{color:var(--muted);width:44%}
-.hours td:last-child{font-weight:600}
+.hours td{padding:11px 0;border-bottom:1px dashed var(--hair);font-size:.93rem;vertical-align:top;line-height:1.4}
+.hours tr:last-child td{border-bottom:0}
+.hours td:first-child{color:var(--muted);width:42%;padding-right:14px}
+.hours td:last-child{font-weight:600;color:var(--pine)}
+.hours .note{display:block;font-weight:400;color:var(--muted);font-size:.78rem;margin-top:3px}
+.loc .contact{margin-top:auto;padding-top:22px;border-top:1px solid var(--hair);display:flex;flex-direction:column;gap:7px;font-size:.94rem;color:var(--muted)}
 .loc .contact a{font-weight:600;text-decoration:none}
 .loc .contact a:hover{text-decoration:underline}
 
