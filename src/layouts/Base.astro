@@ -61,7 +61,7 @@ const dismissKey = (() => {
       <span><b>Ustanova za zdravstvenu skrb AUDIO</b><small>Zagreb</small></span>
     </a>
     <button class="burger" aria-label="Izbornik" aria-expanded="false" aria-controls="mainNav" type="button"
-      onclick="const n=document.getElementById('mainNav');n.classList.toggle('open');this.setAttribute('aria-expanded',n.classList.contains('open'))">
+      onclick="const n=document.getElementById('mainNav');const o=n.classList.toggle('open');this.setAttribute('aria-expanded',o);document.body.classList.toggle('nav-lock',o)">
       <span></span><span></span><span></span>
     </button>
     <nav class="nav" id="mainNav" aria-label="Glavna navigacija">
@@ -71,6 +71,11 @@ const dismissKey = (() => {
       <a href="/tim">Tim</a>
       <a href="/o-nama">O nama</a>
       <a class="cta" href="/#kontakt">Naručite se</a>
+      <div class="nav-contact" aria-label="Kontakt">
+        <span class="lbl">Nazovite nas</span>
+        <a href="tel:+38512314014">Božidarevićeva 7<small>01 2314 014</small></a>
+        <a href="tel:+38516636677">Ede Murtića 6<small>01 6636 677</small></a>
+      </div>
     </nav>
   </div>
 </header>
@@ -202,6 +207,7 @@ const dismissKey = (() => {
     var burger = document.querySelector('.burger');
     function close() {
       nav.classList.remove('open');
+      document.body.classList.remove('nav-lock');
       if (burger) burger.setAttribute('aria-expanded', 'false');
     }
     nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', close); });
