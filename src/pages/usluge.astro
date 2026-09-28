@@ -5,6 +5,15 @@ import hzzo from '../data/usluge-hzzo.json';
 import ikone from '../data/hzzo-ikone.json';
 import { paras } from '../lib/richtext.js';
 
+const privatneGlavne = [
+  { naziv: 'Privatni pregled obiteljskog liječnika', opis: 'Osobna, dostupna i kontinuirana zdravstvena skrb.' },
+  { naziv: 'Specijalistički pregledi', opis: 'Specijalistički pregledi, dijagnostika i koordinirana zdravstvena skrb.' },
+  { naziv: 'Sistematski pregledi', opis: 'Individualizirani sistematski pregledi prilagođeni vašim potrebama.' },
+  { naziv: 'Program regulacije tjelesne težine (Mounjaro)', opis: 'Medicinski vođen program regulacije tjelesne težine i metaboličkog zdravlja.' },
+  { naziv: 'Pregled i liječenje kožnih promjena', opis: 'Pregled, dijagnostika i liječenje madeža i drugih kožnih promjena.' },
+  { naziv: 'Terapija bolnih stanja i akupunktura', opis: 'Liječenje akutnih i kroničnih bolnih stanja uz akupunkturu i druge terapijske metode.' },
+];
+const privatneDijagnostika = ['Ultrazvučna dijagnostika (UZV)', 'EKG', 'Holter tlaka', 'Vađenje krvi', 'Fizikalna terapija (laser, TENS)'];
 ---
 <Base
   title={'Naše usluge — Ustanova za zdravstvenu skrb AUDIO'}
@@ -15,6 +24,7 @@ import { paras } from '../lib/richtext.js';
   <div class="container">
     <p class="crumb"><a href="/">Naslovnica</a> / Usluge</p>
     <h1>Naše usluge</h1>
+    <p class="ph-lead">HZZO i privatne usluge — pregledi, dijagnostika i terapija na jednom mjestu.</p>
     <div class="actions">
       <a class="cta" href="#hzzo">HZZO usluge</a>
       <a class="cta ghost" href="#privatne">Privatne usluge</a>
@@ -27,9 +37,7 @@ import { paras } from '../lib/richtext.js';
   <div class="container">
     <p class="eyebrow reveal">Naše usluge</p>
     <div class="lead-copy reveal d1">
-      <p>Ustanova za zdravstvenu skrb AUDIO je <strong>ugovorna ustanova Hrvatskog zavoda za zdravstveno osiguranje (HZZO)</strong> koja pruža usluge obiteljske medicine kroz tri ordinacije obiteljske medicine, smještene na dvije lokacije (Božidarevićeva 7 i Ede Murtića 6).</p>
-      <p><strong>Dio naših usluga je pokriven putem HZZO-a, a dio usluga nudimo u privatnom aranžmanu.</strong></p>
-      <p>Za sve naše usluge potrebno je unaprijed se naručiti telefonski ili putem e-maila (svi naši kontakti su <a href="/ordinacije">ovdje</a>). U najkraćem mogućem roku odgovaramo na vaše zahtjeve i upite upućene na elektroničku poštu ordinacije.</p>
+      <p>Kao <strong>ugovorna ustanova HZZO-a</strong> pružamo cjelovitu primarnu zdravstvenu zaštitu kroz tri ordinacije obiteljske medicine na dvije lokacije u Zagrebu. <strong>Dio usluga pokriven je putem HZZO-a, a dio nudimo u privatnom aranžmanu.</strong> Za sve usluge potrebno je unaprijed se naručiti.</p>
     </div>
   </div>
 </section>
@@ -42,6 +50,7 @@ import { paras } from '../lib/richtext.js';
         <p class="eyebrow reveal">Naše HZZO usluge</p>
         <h2 class="t reveal" id="hzzo-h">Što pokrivamo <em>putem HZZO-a?</em></h2>
       </div>
+      <p class="right reveal d1">Za osigurane pacijente, kao ugovorna ustanova HZZO-a, pružamo cjelovitu primarnu zdravstvenu zaštitu.</p>
     </div>
     <div class="svc-acc-list">
       {hzzo.usluge.map((u, i) => (
@@ -64,15 +73,28 @@ import { paras } from '../lib/richtext.js';
       </div>
       <div class="right reveal d1">
         <p>Kao privatna ordinacija obiteljske medicine ponosimo se našom predanošću i visokom kvalitetom usluge, što se očituje u svemu što radimo – od prvog kontakta, preko dijagnostičkog procesa, pa sve do individualno prilagođenih planova liječenja.</p>
+        <p class="phone">
+          <span class="ic" aria-hidden="true"><svg viewBox="0 0 512 512"><path d="M493.4 24.6l-104-24c-11.3-2.6-22.9 3.3-27.5 13.9l-48 112c-4.2 9.8-1.4 21.3 6.9 28l60.6 49.6c-36 76.7-98.9 140.5-177.2 177.2l-49.6-60.6c-6.8-8.3-18.2-11.1-28-6.9l-112 48C3.9 366.5-2 378.1.6 389.4l24 104C27.1 504.2 36.7 512 48 512c256.1 0 464-207.5 464-464 0-11.2-7.7-20.9-18.6-23.4z"/></svg></span>
+          <span>Za privatne usluge nazovite<br /><a href="tel:+38512305444">01 2305 444</a></span>
+        </p>
       </div>
     </div>
-    <div class="priv-grid">
-      <div class="pcard reveal"><span class="no">— 01</span><h3>Pristup usmjeren klijentu</h3><p>Odlični iskusni doktori, u ugodnom okruženju čiji je cilj vaše što brže ozdravljenje i što bezbrižniji tijek liječenja.</p></div>
-      <div class="pcard reveal d1"><span class="no">— 02</span><h3>Fleksibilno radno vrijeme</h3><p>Radno vrijeme prilagođeno vama i vašim potrebama.</p></div>
-      <div class="pcard reveal d2"><span class="no">— 03</span><h3>Dodatne usluge</h3><p>Nudimo ultrazvučne preglede, EKG, holter tlaka, fizikalnu terapiju (laser, tens) i vađenje krvi te mogućnost obavljanja svega u istome danu.</p></div>
-      <div class="pcard reveal"><span class="no">— 04</span><h3>Dodatne konzultacije</h3><p>Savjetovanje s najboljim specijalistima ukoliko je potrebna dodatna konzultacija.</p></div>
-      <div class="pcard reveal d1"><span class="no">— 05</span><h3>Sistematski pregledi</h3><p>Individualizirani sistematski pregledi prilagođeni vašim potrebama.</p></div>
-      <div class="pcard reveal d2"><span class="no">— 06</span><h3>Sve na jednom mjestu</h3><p>Pregledi, upućivanje specijalistima, utvrđivanje radne nesposobnosti te propisivanje lijekova i pomagala, sve na jednom mjestu.</p></div>
+    <div class="priv-main reveal">
+      {privatneGlavne.map((u) => (
+        <div class="pmcard">
+          <h3>{u.naziv}</h3>
+          <p>{u.opis}</p>
+        </div>
+      ))}
+    </div>
+    <div class="priv-diag reveal d1">
+      <p class="pd-lbl">Dijagnostika i pretrage</p>
+      <div class="priv-main">
+        {privatneDijagnostika.map((d) => (
+          <div class="pmcard"><h3>{d}</h3></div>
+        ))}
+      </div>
+      <p class="pd-note">Uz mogućnost obavljanja svega u istome danu.</p>
     </div>
   </div>
 </section>
@@ -88,7 +110,7 @@ import { paras } from '../lib/richtext.js';
       <p class="right reveal d1">Pogledajte listu pitanja s kojima se često susretnemo. Možda ćete u njima pronaći odgovor i prije nego nas kontaktirate.</p>
     </div>
     <div class="faq-wrap reveal">
-      <img src="/images/2024/09/medical-563427_1280-1024x682.jpg" alt="Medicinska oprema" loading="lazy" />
+      <img src="/images/hero/obiteljska-medicina.jpg" alt="Liječnica u razgovoru s pacijentom" loading="lazy" />
       <div class="faq-list">
         {hzzo.faq.map((f, i) => (
           <details class="faq" open={i === 0}>
