@@ -184,6 +184,7 @@ const dismissKey = (() => {
   (function () {
     var form = document.getElementById('kontaktForma');
     if (!form) return;
+    var loadedAt = Date.now(); // time-trap: slanje brže od 3s = gotovo sigurno bot
     var ENDPOINT = 'https://formsubmit.co/ajax/doktor@audio.hr'; // produkcija — upiti idu na doktor@
     var statusEl = document.getElementById('formStatus');
     var btn = form.querySelector('button[type="submit"]');
@@ -192,6 +193,7 @@ const dismissKey = (() => {
       ev.preventDefault();
       var hp = form.querySelector('[name="_honey"]');
       if (hp && hp.value) return;
+      if (Date.now() - loadedAt < 3000) { setStatus('Molimo pričekajte trenutak pa pošaljite ponovno.', 'err'); return; }
       var f = new FormData(form);
       var vrsta = f.get('vrsta') || '';
       f.append('_subject', 'Upit s web stranice — ' + vrsta);
